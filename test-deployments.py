@@ -21,7 +21,6 @@ result = str(stdout.read().decode('ascii').strip("\n"))
 print (result)
 pod_status = re.findall(r"pod\/\S+\s+\d\/\d\s+(\w+)", result)
 print ("PODS", pod_status)
-
 stdout.close()
 stdin.close()
 ssh.close()
