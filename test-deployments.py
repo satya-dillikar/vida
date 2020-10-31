@@ -4,10 +4,10 @@ os.system('pip3 install paramiko')
 import paramiko
 import sys
  
-host = sys.argv[2]
-port = sys.argv[1]
-username = sys.argv[3]
-password = sys.argv[4]
+host = sys.argv[1]
+port = 10004
+username = sys.argv[2]
+password = sys.argv[3]
 
 command = "kubectl --kubeconfig=kubeconfig.yaml  get all"
 
