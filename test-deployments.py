@@ -21,6 +21,8 @@ result = str(stdout.read().decode('ascii').strip("\n"))
 print (result)
 pod_status = re.findall(r"pod\/\S+\s+\d\/\d\s+(\w+)", result)
 print ("PODS", pod_status)
+if (pod_status[0] =='Running'):
+    raise Exception("Unable to set TSO/LRO flag to 'OFF' on %s", VM)
 stdout.close()
 stdin.close()
 ssh.close()
