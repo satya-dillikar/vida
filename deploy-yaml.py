@@ -23,11 +23,6 @@ stdin.close()
 result = str(stdout.read().decode('ascii').strip("\n"))
 lines = stdout.readlines()
 print (result)
-tso_flag = re.findall(r":\s(\w+)", result)
-
-if (tso_flag[0] =='Running'):
-    raise Exception("Unable to set TSO/LRO flag to 'OFF' on %s", VM)
-
 stdout.close()
 stdin.close()
 ssh.close()
