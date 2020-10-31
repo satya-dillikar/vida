@@ -18,10 +18,10 @@ print("\nArguments passed:", end = " ")
 for i in range(1, n):
     print(sys.argv[i], end = " ")
 
-host = sys.argv[2]
-port = sys.argv[1]
-username = sys.argv[3]
-password = sys.argv[4]
+host = sys.argv[1]
+port = 10004
+username = sys.argv[2]
+password = sys.argv[3]
 
 command = "kubectl --kubeconfig=kubeconfig.yaml  apply -f https://raw.githubusercontent.com/shefeekj/helm-repo/main/stateless/wordpress/mysql-deployment.yml -f https://raw.githubusercontent.com/shefeekj/helm-repo/main/stateless/wordpress/wordpress-deployment.yaml"
 
