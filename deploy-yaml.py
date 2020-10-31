@@ -6,17 +6,7 @@ print ("Testing Python")
 
 
 import sys
- 
-# total arguments
-n = len(sys.argv)
-print("Total arguments passed:", n)
- 
-# Arguments passed
-print("\nName of Python script:", sys.argv[0])
- 
-print("\nArguments passed:", end = " ")
-for i in range(1, n):
-    print(sys.argv[i], end = " ")
+
 host = sys.argv[1]
 port = 10004
 username = sys.argv[2]
@@ -34,16 +24,9 @@ result = str(stdout.read().decode('ascii').strip("\n"))
 lines = stdout.readlines()
 print (result)
 tso_flag = re.findall(r":\s(\w+)", result)
-channel = ssh.invoke_shell()
-stdin = channel.makefile('wb')
-stdout = channel.makefile('rb')
 
-stdin.write('''
-cd tmp
-ls
-exit
-''')
-print (str(stdout.read().decode('ascii').strip("\n")))
+if (tso_flag[0] =='Running'):
+    raise Exception("Unable to set TSO/LRO flag to 'OFF' on %s", VM)
 
 stdout.close()
 stdin.close()
