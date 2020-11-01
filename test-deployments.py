@@ -21,7 +21,7 @@ result = str(stdout.read().decode('ascii').strip("\n"))
 print (result)
 pod_status = re.findall(r"pod\/\S+\s+\d\/\d\s+(\w+)", result)
 print ("PODS", pod_status)
-if (pod_status[0] !='Running'):
+if (pod_status[0] !='Running' or pod_status[1] !='Running' ):
     raise Exception("PODS NOT RUNNING")
 stdout.close()
 stdin.close()
