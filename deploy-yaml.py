@@ -22,6 +22,7 @@ stdin.close()
 result = str(stdout.read().decode('ascii').strip("\n"))
 lines = stdout.readlines()
 print (result)
+
 stdout.close()
 stdin.close()
 ssh.close()
