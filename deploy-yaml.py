@@ -17,7 +17,6 @@ command = "kubectl --kubeconfig=kubeconfig.yaml  apply -f https://raw.githubuser
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(host, port, username, password)
-
 stdin, stdout, stderr = ssh.exec_command(command)
 stdin.close()
 result = str(stdout.read().decode('ascii').strip("\n"))
