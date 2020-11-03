@@ -12,7 +12,7 @@ password = sys.argv[3]
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(host, port, username, password)
-stdin, stdout, stderr = ssh.exec_command("helm delete wp \n helm repo update \n helm install wp hb/wordpress-mysql-stateless")
+stdin, stdout, stderr = ssh.exec_command("export KUBECONFIG=/root/kubeconfig.yaml \n helm delete wp \n helm repo update \n helm install wp hb/wordpress-mysql-stateless")
 stdin.close()
 lines = stdout.readlines()
 print (lines)
