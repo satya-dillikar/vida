@@ -21,10 +21,6 @@ outlines=stdout.readlines()
 resp=''.join(outlines)
 print(resp)
 
-stdout.close()
-stdin.close()
-ssh.close()
-
 stdin, stdout, stderr = ssh.exec_command(command2)
 stdin.close()
 outlines=stdout.readlines()
