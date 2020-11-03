@@ -21,7 +21,7 @@ helm delete wp
 helm repo update
 helm install wp hb/wordpress-mysql-stateless
 ''')
-print stdout.read()
+print (stdout.read())
 
 stdout.close()
 stdin.close()
