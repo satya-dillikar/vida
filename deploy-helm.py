@@ -16,9 +16,9 @@ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(host, port, username, password)
 stdin, stdout, stderr = ssh.exec_command(command)
 stdin.close()
-result = str(stdout.read().decode('ascii').strip("\n"))
 lines = stdout.readlines()
-print (result)
+for line in stdout:
+    print('... ' + line.strip('\n'))
 
 stdout.close()
 stdin.close()
