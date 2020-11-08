@@ -1,5 +1,6 @@
 import re
 import os
+import time
 os.system('pip3 install paramiko')
 import paramiko
 import sys
@@ -11,7 +12,7 @@ password = sys.argv[3]
 
 
 command = "export KUBECONFIG=/root/kubeconfig.yaml; helm delete wp; helm repo update;helm install wp hb/wordpress-mysql-stateless"
-
+time.sleep(15)
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(host, port, username, password)
