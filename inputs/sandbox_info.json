@@ -1,9 +1,10 @@
 
 {
         "ip": "52.27.226.160",
+        "port": "10004",
         "username": "root",
-        "password": "ca$hc0w",
-        "test": "test"
+        "password": "ca$hc0w"
+   
        
 }
 
