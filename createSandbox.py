@@ -1,3 +1,6 @@
+import os
+import time
+os.system('pip3 install requests')
 import requests
 import json
 import time
