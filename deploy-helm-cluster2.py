@@ -19,7 +19,7 @@ password = data["password"]
 
 
 
-command = "export KUBECONFIG=/root/kubeconfig.yaml; helm delete wp; helm repo update;helm install wp hb/wordpress-mysql-stateless"
+command = "export KUBECONFIG=/home/vmware/kubeconfig.yaml; helm delete wp; helm repo update;helm install wp hb/wordpress-mysql-stateless"
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
