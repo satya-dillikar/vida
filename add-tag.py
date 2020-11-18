@@ -5,7 +5,7 @@ import os
 from urllib.parse import urlparse
 get_version_cmd ="cat ./resource-helmChart/version"
 chart_version = os.system(get_version_cmd)
-print ("Chart-version: ",get_version_cmd )
+print ("Chart-version: ",chart_version )
 get_metadata_cmd = "cat ./resource-helmChart/metadata.json"
 with open('./resource-helmChart/metadata.json') as f:
   meta_data_json = json.load(f)
