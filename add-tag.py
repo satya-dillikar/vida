@@ -5,6 +5,7 @@ import os
 from urllib.parse import urlparse
 get_version_cmd ="cat ./resource-helmChart/version"
 chart_version = os.system(get_version_cmd)
+print ("Chart-version\n",chart_version )
 get_metadata_cmd = "cat ./resource-helmChart/metadata.json"
 with open('./resource-helmChart/metadata.json') as f:
   meta_data_json = json.load(f)
@@ -13,6 +14,8 @@ for item in meta_data_json:
                 helm_server= item["value"]
         if item["name"] == "chart":
                 chartname= item["value"]
+print ("helm_server\n",helm_server )   
+print ("chartname\n",chartname )
 parsed_url = urlparse(helm_server).hostname
 print(parsed_url)
 api_end_point = parsed_url + "/api/v2.0"
