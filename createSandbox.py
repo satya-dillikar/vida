@@ -4,6 +4,7 @@ os.system('pip3 install requests')
 import requests
 import json
 import time
+import random
 # defining the api-endpoint for sandbox ceration
 POST_API_ENDPOINT = "https://vida.esp-staging.vmware-aws.com/api/v1/vida/sandbox"
 
@@ -15,6 +16,7 @@ data= {
 "planId": 1
 
 }
+time.sleep(random.randint(5, 20))
 
 jsonData = json.dumps(data)
 
