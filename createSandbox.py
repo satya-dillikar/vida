@@ -26,6 +26,8 @@ r = requests.post(url = POST_API_ENDPOINT, data = jsonData, headers=headers)
 
 r_dictionary= r.json()
 
+time.sleep(random.randint(5, 20))
+
 GET_API_ENDPOINT = "https://vida.esp-staging.vmware-aws.com/api/v1/vida/sandbox"+ "/"+ str (r_dictionary['id'])
 r = requests.get(url = GET_API_ENDPOINT)
 
