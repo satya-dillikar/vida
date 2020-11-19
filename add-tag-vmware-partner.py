@@ -27,3 +27,4 @@ command_pvw = "curl -k -v  -u admin:VMware@vida12345  -X POST \""  + url + "\" -
 os.system(command_pvw)
 #print(command_vmw)
 #print(command_pvw)
+sys.exit(1)
